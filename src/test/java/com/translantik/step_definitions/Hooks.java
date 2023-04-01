@@ -5,13 +5,17 @@ In the class we will be able to pass pre- & post- conditions to
  each scenario and each step
  */
 
+import com.translantik.pages.TranslantikLoginPage;
+import com.translantik.utilities.ConfigurationReader;
 import com.translantik.utilities.Driver;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
+    TranslantikLoginPage translantikLoginPage=new TranslantikLoginPage();
 
     //import from io.cucumber.java not from junit
 //    @Before (order = 1)
@@ -24,9 +28,18 @@ public class Hooks {
         System.out.println("====this will only apply to scenarios with @login tag");
     }
 
-    //@Before (value = "@db", order = 0)
-    public void setupForDatabaseScenarios(){
-        System.out.println("====this will only apply to scenarios with @db tag");
+    @Before(value = "@@TRAN10-520", order = 0)
+    public void setupForDeleteCar(){
+        String loginUrl = ConfigurationReader.getProperty("translantik.url");
+        Driver.getDriver().get(loginUrl);
+        translantikLoginPage.inputUsername.
+                sendKeys(ConfigurationReader.getProperty("salesManagerUsername"));
+        translantikLoginPage.inputPassword.
+                sendKeys(ConfigurationReader.getProperty("salesManagerPassword"));
+        translantikLoginPage.loginButton.click();
+
+
+
     }
 
 
