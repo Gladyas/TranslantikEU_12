@@ -6,6 +6,7 @@ In the class we will be able to pass pre- & post- conditions to
  */
 
 import com.translantik.pages.TranslantikLoginPage;
+import com.translantik.utilities.BrowserUtils;
 import com.translantik.utilities.ConfigurationReader;
 import com.translantik.utilities.Driver;
 import io.cucumber.java.After;
@@ -37,11 +38,12 @@ public class Hooks {
         translantikLoginPage.inputPassword.
                 sendKeys(ConfigurationReader.getProperty("TruckDriverPassword"));
         translantikLoginPage.loginButton.click();
+        BrowserUtils.waitForClickablility(translantikLoginPage.fleetButton,5);
 
     }
 
 
-    @After
+  //  @After
     public void teardownScenario(Scenario scenario){
 
         //scenario.isFailed() --> if scenario fails this method will return TRUE boolean value
