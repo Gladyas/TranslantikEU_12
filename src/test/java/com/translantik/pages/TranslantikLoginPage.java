@@ -44,6 +44,9 @@ public class TranslantikLoginPage {
     @FindBy(xpath = "//h2[@class='title']")
     public WebElement loginTitle;
 
+    @FindBy(xpath="//span[@class='title title-level-1']")
+    public WebElement fleetButton;
+
 
 
 
