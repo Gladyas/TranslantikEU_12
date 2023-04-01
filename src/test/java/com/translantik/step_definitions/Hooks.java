@@ -38,9 +38,6 @@ public class Hooks {
                 sendKeys(ConfigurationReader.getProperty("TruckDriverPassword"));
         translantikLoginPage.loginButton.click();
 
-
-
-
     }
 
 
