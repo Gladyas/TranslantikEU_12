@@ -39,6 +39,8 @@ public class Hooks {
                 sendKeys(ConfigurationReader.getProperty("TruckDriverPassword"));
         translantikLoginPage.loginButton.click();
         BrowserUtils.waitForClickablility(translantikLoginPage.fleetButton,5);
+        BrowserUtils.waitForClickablility(translantikLoginPage.fleetButton,5);
+
 
     }
 
