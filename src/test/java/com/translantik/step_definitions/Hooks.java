@@ -28,14 +28,14 @@ public class Hooks {
         System.out.println("====this will only apply to scenarios with @login tag");
     }
 
-    @Before(value = "@@TRAN10-520", order = 0)
+    @Before(value = "@TRAN10-520", order = 0)
     public void setupForDeleteCar(){
         String loginUrl = ConfigurationReader.getProperty("translantik.url");
         Driver.getDriver().get(loginUrl);
         translantikLoginPage.inputUsername.
-                sendKeys(ConfigurationReader.getProperty("salesManagerUsername"));
+                sendKeys(ConfigurationReader.getProperty("TruckDriverUsername"));
         translantikLoginPage.inputPassword.
-                sendKeys(ConfigurationReader.getProperty("salesManagerPassword"));
+                sendKeys(ConfigurationReader.getProperty("TruckDriverPassword"));
         translantikLoginPage.loginButton.click();
 
 
