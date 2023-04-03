@@ -27,6 +27,8 @@ public class FleetVehiclePage extends BasePage {
     public static WebElement fleetVehicle;
 
 
+    @FindBy(xpath="//button[@class='btn dropdown-toggle ']")
+    public WebElement viewPerPageButton;
 
 
 
