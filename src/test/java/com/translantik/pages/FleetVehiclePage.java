@@ -31,13 +31,6 @@ public class FleetVehiclePage extends BasePage {
     @FindBy(xpath = "//div[@class='dropdown'][1]")
     public WebElement firstCarThreeDot;
 
-    @FindBy(xpath="//*[@id='main-menu']/ul/li[1]/a/span")
-    public  WebElement fleetB;
-
-
-    @FindBy(xpath="//span[.='Vehicles']")
-    public  WebElement fleetVehicleB;
-
 
 
 }
