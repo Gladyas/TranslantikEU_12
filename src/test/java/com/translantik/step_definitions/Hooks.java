@@ -48,8 +48,6 @@ public class Hooks extends BasePage {
                 sendKeys(ConfigurationReader.getProperty("TruckDriverPassword"));
         translantikLoginPage.loginButton.click();
         waitUntilLoaderScreenDisappear();
-        actions.moveToElement(fleetVehiclePage.fleetB).perform();
-        fleetVehiclePage.fleetVehicleB.click();
 
 
 
