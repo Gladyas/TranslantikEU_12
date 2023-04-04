@@ -24,4 +24,6 @@ public class DashBoardPage extends BasePage {
         action.moveToElement(Driver.getDriver().findElement(By.linkText(tab))).perform();
         Driver.getDriver().findElement(By.linkText(module)).click();
     }
+
+
 }

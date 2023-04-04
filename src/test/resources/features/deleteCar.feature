@@ -6,6 +6,7 @@ Feature:Delete a Car
   Background: user on fleet-vehicles page
 
 
+    @wipt
     Scenario:All users can see the delete button by hovering over the three dots at the end of each row
       When user hovering mouse over the three dots
       Then user can see the delete button
