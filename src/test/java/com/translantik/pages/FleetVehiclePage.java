@@ -1,8 +1,10 @@
 package com.translantik.pages;
 
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 public class FleetVehiclePage extends BasePage {
 
@@ -22,15 +24,20 @@ public class FleetVehiclePage extends BasePage {
     }
 
     @FindBy(xpath="//*[@id='main-menu']/ul/li[1]/a/span")
-    public static WebElement fleet;
+    public  WebElement fleet;
 
     @FindBy(xpath="//span[.='Vehicles']")
-    public static WebElement fleetVehicle;
-
-    //First car three dot
-    @FindBy(xpath = "//div[@class='dropdown'][1]")
-    public WebElement firstCarThreeDot;
+    public  WebElement fleetVehicle;
 
 
+    @FindBy(xpath="//button[@class='btn dropdown-toggle ']")
+    public WebElement viewPerPageButton;
 
+    @FindBy(xpath="//a[@class='dropdown-item']")
+    public List<WebElement> allValues;
+
+
+
+
+    //comment
 }
