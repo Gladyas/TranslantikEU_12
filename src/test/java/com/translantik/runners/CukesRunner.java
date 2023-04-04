@@ -9,8 +9,10 @@ import org.junit.runner.*;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "com/translantik/step_definitions",
+
         dryRun = false,
         tags = "@filterMenu"
+        publish = false
 
 )
 
