@@ -3,7 +3,7 @@
 
     Background:  user  is on fleet-vehicles page
       Given user is on fleet-vehicles page
-      #I changed the sentence here
+      #I changed the sentence here here
 
       @TRAN10-533
       Scenario:View per page button is displayed and clickable
