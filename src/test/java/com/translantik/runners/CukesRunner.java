@@ -13,7 +13,7 @@ import org.junit.runner.*;
         features = "src/test/resources/features",
         glue = "com/translantik/step_definitions",
         dryRun = false,
-        tags = "@Reyhan",
+        tags = "@reyhan",
         publish = false
 
 )
