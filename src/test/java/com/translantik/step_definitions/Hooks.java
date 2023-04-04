@@ -5,6 +5,9 @@ In the class we will be able to pass pre- & post- conditions to
  each scenario and each step
  */
 
+import com.translantik.pages.BasePage;
+import com.translantik.pages.DashBoardPage;
+import com.translantik.pages.FleetVehiclePage;
 import com.translantik.pages.TranslantikLoginPage;
 import com.translantik.utilities.BrowserUtils;
 import com.translantik.utilities.ConfigurationReader;
@@ -14,9 +17,15 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Hooks {
+public class Hooks extends BasePage {
+    FleetVehiclePage fleetVehiclePage = new FleetVehiclePage();
+    Actions actions=new Actions(Driver.getDriver());
     TranslantikLoginPage translantikLoginPage=new TranslantikLoginPage();
+    DashBoardPage dashBoardPage=new DashBoardPage();
 
     //import from io.cucumber.java not from junit
 //    @Before (order = 1)
@@ -38,6 +47,7 @@ public class Hooks {
         translantikLoginPage.inputPassword.
                 sendKeys(ConfigurationReader.getProperty("TruckDriverPassword"));
         translantikLoginPage.loginButton.click();
+        waitUntilLoaderScreenDisappear();
 
 
 
@@ -45,7 +55,7 @@ public class Hooks {
     }
 
 
-  //  @After
+    @After
     public void teardownScenario(Scenario scenario){
 
         //scenario.isFailed() --> if scenario fails this method will return TRUE boolean value
