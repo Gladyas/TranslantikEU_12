@@ -110,6 +110,7 @@ public class Arrangement_StepDef {
         FleetVehiclePage.loginWithCredentials("user1","UserUser123");
         actions.moveToElement(fleetVehiclePage.fleet).perform();
         fleetVehiclePage.fleetVehicle.click();
+        //comment
 
     }
 }
