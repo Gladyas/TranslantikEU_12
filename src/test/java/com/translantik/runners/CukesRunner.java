@@ -11,7 +11,7 @@ import org.junit.runner.*;
         glue = "com/translantik/step_definitions",
 
         dryRun = false,
-        tags = "@filterMenu",
+        tags = "@reyhan",
         publish = false
 
 )

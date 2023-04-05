@@ -23,14 +23,9 @@ public class Arrangement_StepDef {
     FleetVehiclePage fleetVehiclePage= new FleetVehiclePage();
     Actions actions=new Actions(Driver.getDriver());
 
-    @Given("user on fleet-vehicles page")
-    public void user_on_fleet_vehicles_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("transatlantik.url"));
-        FleetVehiclePage.loginWithCredentials("user1","UserUser123");
-        actions.moveToElement(fleetVehiclePage.fleet).perform();
-        fleetVehiclePage.fleetVehicle.click();
 
-    }
+
+
     @When("view per page button is displayed")
     public void view_per_page_button_is_displayed() {
         WebDriverWait wait=new WebDriverWait(Driver.getDriver(), 10);
@@ -101,10 +96,21 @@ public class Arrangement_StepDef {
 
     @When("view per page button is clicked")
     public void viewPerPageButtonIsClicked() {
-        WebDriverWait wait=new WebDriverWait(Driver.getDriver(), 10);
-        wait.until(ExpectedConditions.visibilityOf(fleetVehiclePage.viewPerPageButton));
+        BrowserUtils.sleep(10);
+        //WebDriverWait wait=new WebDriverWait(Driver.getDriver(), 10);
+        //wait.until(ExpectedConditions.visibilityOf(fleetVehiclePage.viewPerPageButton));
         fleetVehiclePage.viewPerPageButton.click();
 
+
+    }
+
+    @Given("user is on fleet-vehicles page")
+    public void userIsOnFleetVehiclesPage() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("transatlantik.url"));
+        FleetVehiclePage.loginWithCredentials("user1","UserUser123");
+        actions.moveToElement(fleetVehiclePage.fleet).perform();
+        fleetVehiclePage.fleetVehicle.click();
+        //comment
 
     }
 }
