@@ -96,8 +96,9 @@ public class Arrangement_StepDef {
 
     @When("view per page button is clicked")
     public void viewPerPageButtonIsClicked() {
-        WebDriverWait wait=new WebDriverWait(Driver.getDriver(), 10);
-        wait.until(ExpectedConditions.visibilityOf(fleetVehiclePage.viewPerPageButton));
+        BrowserUtils.sleep(10);
+        //WebDriverWait wait=new WebDriverWait(Driver.getDriver(), 10);
+        //wait.until(ExpectedConditions.visibilityOf(fleetVehiclePage.viewPerPageButton));
         fleetVehiclePage.viewPerPageButton.click();
 
 
@@ -109,8 +110,6 @@ public class Arrangement_StepDef {
         FleetVehiclePage.loginWithCredentials("user1","UserUser123");
         actions.moveToElement(fleetVehiclePage.fleet).perform();
         fleetVehiclePage.fleetVehicle.click();
-        //my new background here
-
 
     }
 }
